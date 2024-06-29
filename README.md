@@ -3,7 +3,9 @@
 <h3> Note: If you have already created your branch once, the next time you work on the same branch do not forget to do the following:<br>
 
 1. Switch branch to yours<br><br>
-2. <code>git fetch origin<br>git merge main</code><br>
+2. <code>git fetch origin
+<br>
+git merge main</code><br>
 
 <br>Now you can start working again
 
