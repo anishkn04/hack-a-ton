@@ -2,12 +2,17 @@
 
 <h3> Note: If you have already created your branch once, the next time you work on the same branch do not forget to do the following:<br></h3>
 
-1. Switch branch to yours<br><br>
-2. Merge the main branch to yours:
-```
-git fetch origin
-git merge main
-```
+1. Go to https://github.com/anishkn04/hack-a-ton
+2. Select your branch
+3. If there is a `_ commits behind main` then click on it and create Pull Request. If there is no such thing, you can simply start working.
+![image](https://github.com/anishkn04/hack-a-ton/assets/113242950/c5ae1ed7-f869-4744-9120-dda3746c521e)
+![image](https://github.com/anishkn04/hack-a-ton/assets/113242950/adbb3f65-8805-4d34-b466-6b089927c19f)
+![image](https://github.com/anishkn04/hack-a-ton/assets/113242950/b1f21e0f-0ed7-4a19-993d-1e7bde12ce41)
+
+4. Merge the PR to your branch.
+![image](https://github.com/anishkn04/hack-a-ton/assets/113242950/daaf0b25-4c3f-431a-948a-f644c2bc3f23)
+
+
 
 <h3>Now you can start working again<br>
 Also, if the branch already exists, the third point in `Get Started: Step 3` will be simply "git push"
