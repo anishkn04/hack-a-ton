@@ -1,3 +1,4 @@
+/* Reset and basic styles */
 * {
   margin: 0;
   padding: 0;
@@ -9,19 +10,21 @@ body {
   width: 100vw;
 }
 
-#sidebar {
+.sidebar,.sidebar-big-width{
   position: absolute;
+  display: flex;
   left: -350px;
   top: 0;
   height: 100%;
   width: 70%;
-  transition: left 0.5s ease;
+  transition: left 0.5s ease, visibility 0.5s ease;
   background-color: #fff8e8;
   justify-content: center;
   padding: 20px;
+  visibility: hidden;
 }
 
-.labels {
+.labels,.labels-big-width{
   display: flex;
   width: 100%;
   height: 100%;
@@ -29,29 +32,47 @@ body {
   align-items: center;
   list-style: none;
 }
+.sidebar-big-width{
+  display: none;
+}
+
+
 
 .label-items {
   display: flex;
   align-items: center;
   justify-content: center;
-    width: 100%;
+  width: 100%;
   height: 10%;
   padding-bottom: 10px;
   font-size: 18px;
   border-bottom: 2px solid #fcd581;
 }
 
-#close_sidebar {
+#close_sidebar,#close_sidebar_big{
   border: none;
   justify-content: right;
 }
+
 #navbar {
+  display: flex;
+  align-items: center;
   background-color: #fcd581;
   width: 100%;
   height: 10%;
   display: flex;
   align-items: center;
   padding: 13px;
+  align-items: center;
+  justify-content: space-between; 
+}
+
+#head{
+  display: none;
+  flex-grow: 1;
+  text-align: center;
+  font-size: 24px;
+ 
 }
 
 #sidebar_img,
@@ -59,4 +80,57 @@ body {
   width: 47px;
   height: 48px;
   cursor: pointer;
+}
+
+#logo{
+  display: none;
+}
+
+@media screen and (min-width: 480px){
+  .sidebar,.sidebar-big-width{
+    width: 300px;
+  }
+
+  #head{
+    display: inline;
+  }
+}
+@media screen and (min-width: 768px){
+ #sidebar_img{
+  display: none;
+ }
+ #sidebar {
+  display: none;
+}
+
+ .sidebar-big-width{
+  display: flex;
+  left: 0px;
+  top: 10vh;
+  height: 90vh;
+  visibility: visible;
+  border-right: 2px solid salmon;
+  
+}
+
+#close_sidebar_big{
+  display: none;
+ 
+}
+
+#logo{
+  display: block;
+  width: 47px;
+  height: 48px
+}
+
+.labels-big-width{
+  justify-content: center;
+  border: 2px dotted #fcd581;
+}
+
+.label-items:hover{
+  cursor: pointer;
+  background-color: #fcd581;
+}
 }

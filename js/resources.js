@@ -1,9 +1,16 @@
-let sidebar = document.getElementById("sidebar");
+let sidebar = document.querySelector(".sidebar");
 let sidebar_img = document.getElementById("sidebar_img");
+let sidebar_close_img = document.getElementById("sidebar_close_img");
 
-document.getElementById("sidebar_img").addEventListener("click", sidebarOpen);
+sidebar_img.addEventListener("click", sidebarOpen);
+sidebar_close_img.addEventListener("click", sidebarClose);
 
 function sidebarOpen() {
-    sidebar.style.display="flex"
-    sidebar.style.left="0px"
+  sidebar.style.visibility = "visible";
+  sidebar.style.left = "0px";
+}
+
+function sidebarClose() {
+  sidebar.style.left = "-350px";
+  sidebar.style.visibility = "hidden";
 }
