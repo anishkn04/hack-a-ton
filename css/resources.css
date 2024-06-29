@@ -1,1 +1,62 @@
-/* Rishav Chapagain */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+#sidebar {
+  position: absolute;
+  left: -350px;
+  top: 0;
+  height: 100%;
+  width: 70%;
+  transition: left 0.5s ease;
+  background-color: #fff8e8;
+  justify-content: center;
+  padding: 20px;
+}
+
+.labels {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+}
+
+.label-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    width: 100%;
+  height: 10%;
+  padding-bottom: 10px;
+  font-size: 18px;
+  border-bottom: 2px solid #fcd581;
+}
+
+#close_sidebar {
+  border: none;
+  justify-content: right;
+}
+#navbar {
+  background-color: #fcd581;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  padding: 13px;
+}
+
+#sidebar_img,
+.label-items img {
+  width: 47px;
+  height: 48px;
+  cursor: pointer;
+}
