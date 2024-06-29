@@ -1,3 +1,20 @@
+# Contribution Guide
+
+<h3> Note: If you have already created your branch once, the next time you work on the same branch do not forget to do the following:<br></h3>
+
+1. Switch branch to yours<br><br>
+2. Merge the main branch to yours:
+```
+git fetch origin
+git merge main
+```
+
+<h3>Now you can start working again<br>
+Also, if the branch already exists, the third point in `Get Started: Step 3` will be simply "git push"
+</h3>
+
+# Get Started
+
 1. Clone: `git clone https://github.com/anishkn04/hack-a-ton.git`
 
 2. Checkout to your branch: `git checkout -b yourName` (Use your name for the branch name, example: anish, nishan, etc)
