@@ -1,21 +1,135 @@
-[
-    {
-        "category": "AB",
-        "name": "Nishan Paudel",
-        "email": "neezpau04@gmail.com",
-        "linkedin": "nishan-paudel-919450238",
-        "github": "Nishan2004paudel",
-        "wakatime": "neezpau",
-        "portfolio": "neezpau",
-        "team": {
-            "name": "",
-            "members": [
-                "Nishan Paudel",
-                "Prawin Yadav"
-            ]
+{
+    "members": [
+        {
+            "category": "AB",
+            "name": "Nishan Paudel",
+            "email": "neezpau04@gmail.com",
+            "linkedin": "nishanpaudel2004",
+            "github": "Nishan2004paudel",
+            "wakatime": "neezpau",
+            "portfolio": "https://www.paudelnishan.com.np",
+            "teamName": "Terai-Toads",
+            "projectRepo": "",
+            "projectImage": "",
+            "projectDesc": ""
         },
-        "projectRepo": "",
-        "projectImage": "",
-        "projectDesc": ""
-    }
-]
+        {
+            "category": "XY",
+            "name": "Rushab Risal",
+            "email": "rushabofficials@gmail.com",
+            "linkedin": "RushabRisal",
+            "github": "RushabRisal",
+            "wakatime": "Rushab",
+            "portfolio": "",
+            "teamName": "Mote-Mongooses",
+            "projectRepo": "",
+            "projectImage": "",
+            "projectDesc": ""
+        },
+        {
+            "category": "XY",
+            "name": "Rishav Chapagain",
+            "email": "gainrishavchap@gmail.com",
+            "linkedin": "rishav-chapagain",
+            "github": "RishavOsaurus",
+            "wakatime": "rishavosaurus",
+            "portfolio": "",
+            "teamName": "Lamba-Langurs",
+            "projectRepo": "",
+            "projectImage": "",
+            "projectDesc": ""
+        },
+        {
+            "category": "XY",
+            "name": "Prawin Kumar Yadav",
+            "email": "Yadavprawin126@gmail.com",
+            "linkedin": "meprawin404",
+            "github": "meprawin404",
+            "wakatime": "Prawin",
+            "portfolio": "",
+            "teamName": "Terai-Toads",
+            "projectRepo": "",
+            "projectImage": "",
+            "projectDesc": ""
+        },
+        {
+            "category": "AB",
+            "name": "Manish Raj Upreti",
+            "email": "manishrajupreti@gmail.com",
+            "linkedin": "manishrajupreti",
+            "github": "manishrajupreti",
+            "wakatime": "manishrajupreti",
+            "portfolio": "https://manishrajupreti.com.np",
+            "teamName": "Lamba-Langurs",
+            "projectRepo": "",
+            "projectImage": "",
+            "projectDesc": ""
+        },
+        {
+            "category": "AB",
+            "name": "Prayojan Puri",
+            "email": "pprayojan888@gmail.com",
+            "linkedin": "prayojanpuri",
+            "github": "prayojan789",
+            "wakatime": "prayojan",
+            "portfolio": "",
+            "teamName": "Mote-Mongooses",
+            "projectRepo": "",
+            "projectImage": "",
+            "projectDesc": ""
+        },
+        {
+            "category": "AB",
+            "name": "Abhishek Bhattarai",
+            "email": "abhishekbhattarai2020@gmail.com",
+            "linkedin": "abhishek-bhattarai-871a83270",
+            "github": "abhisekbt",
+            "wakatime": "Abhishekbt",
+            "portfolio": "https://babhishek.com.np/",
+            "teamName": "Diwaane-Dingoes",
+            "projectRepo": "",
+            "projectImage": "",
+            "projectDesc": ""
+        },
+        {
+            "category": "XY",
+            "name": "Aashish BK",
+            "email": "aashishbishow@gmail.com",
+            "linkedin": "aashishbishow",
+            "github": "aashishbishow",
+            "wakatime": "aashishbishow",
+            "portfolio": "",
+            "teamName": "Diwaane-Dingoes",
+            "projectRepo": "",
+            "projectImage": "",
+            "projectDesc": ""
+        }
+    ],
+    "teams": [
+        {
+            "name": "Terai-Toads",
+            "members": [
+                "Prawin Kumar Yadav",
+                "Nishan Paudel"
+            ]
+        },{
+            "name": "Diwaane-Dingoes",
+            "members": [
+                "Aashish BK",
+                "Abhishek Bhattarai"
+            ]
+        },{
+            "name": "Mote-Mongooses",
+            "members": [
+                "Prayojan Puri",
+                "Rushab Risal"
+            ]
+        },{
+            "name": "Lamba-Langurs",
+            "members": [
+                "Manish Raj Upreti",
+                "Rishav Chapagain"
+            ]
+        }
+    ]
+}
