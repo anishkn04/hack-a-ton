@@ -1,15 +1,16 @@
 # Contribution Guide
 
-<h3> Note: If you have already created your branch once, the next time you work on the same branch do not forget to do the following:<br>
+<h3> Note: If you have already created your branch once, the next time you work on the same branch do not forget to do the following:<br></h3>
 
 1. Switch branch to yours<br><br>
-2. <code>git fetch origin
-<br>
-git merge main</code><br>
+2. Merge the main branch to yours:
+```
+git fetch origin
+git merge main
+```
 
-<br>Now you can start working again
-
-Also, if the branch already exists, the third point in Step 3 will be simply "git push"
+<h3>Now you can start working again<br>
+Also, if the branch already exists, the third point in `Get Started: Step 3` will be simply "git push"
 </h3>
 
 # Get Started
