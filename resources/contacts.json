@@ -1,0 +1,21 @@
+[
+    {
+        "category": "",
+        "name": "",
+        "email": "",
+        "linkedin": "",
+        "github": "",
+        "wakatime": "",
+        "portfolio": "",
+        "team": {
+            "name": "",
+            "members": [
+                "",
+                ""
+            ]
+        },
+        "projectRepo": "",
+        "projectImage": "",
+        "projectDesc": ""
+    }
+]
