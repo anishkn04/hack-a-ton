@@ -47,6 +47,9 @@
     (This is for the first time if there is no branch in the upstream)<br>
     (If you work on the same branch next time, you can just do `git push`)
 
+
+# PRs will be merged only after July 4. So, you do not have to follow the steps below before July 4.
+
 4. Then go to repo: https://github.com/anishkn04/hack-a-ton, select your branch.
 
 ![Select Branch](images/branch.png)
