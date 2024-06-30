@@ -1,11 +1,4 @@
 <!-- Nishan Paudel -->
-<?php
-$servername="localhost";
-$username="root";
-$password="";
-$dbname="sales_database";
-$conn=mysqli_connect($servername,$username,$password,$dbname);
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -81,3 +74,5 @@ VALUES('$seller_name', '$email', '$phone', '$s_address', '$nameofbook', '$number
 $result=mysqli_query($conn,$sql);
 }
 ?>
+
+
