@@ -16,7 +16,7 @@ const showData = (data) => {
             
             </div>
         `;
-    }).join(''); // join the array elements into a single string
+    }).join(''); 
 
     shows.innerHTML = showD;
 };
