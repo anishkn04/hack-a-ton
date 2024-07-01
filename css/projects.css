@@ -602,7 +602,7 @@ video {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  transform: translateY(-50%);
+  transform: translateY(0%);
   transition: 0.6s;
 }
 
@@ -618,32 +618,32 @@ video {
 }
 
 .slider .slides:nth-child(3){
-  left: calc(50% + 240px);
+  left: calc(70% + 240px);
   background-size: cover;
 }
 
 .slider .slides:nth-child(4){
-  left: calc(50% + 500px);
+  left: calc(70% + 500px);
   background-size: cover;
 }
 
 .slider .slides:nth-child(5){
-  left: calc(50% + 750px);
+  left: calc(70% + 750px);
   background-size: cover;
 }
 
 .slider .slides:nth-child(6){
-  left: calc(50% + 1000px);
+  left: calc(70% + 1000px);
   background-size: cover;
 }
 
 .slider .slides:nth-child(7){
-  left: calc(50% + 1250px);
+  left: calc(70% + 1250px);
   background-size: cover;
 }
 
 .slider .slides:nth-child(8){
-  left: calc(50% + 1500px);
+  left: calc(70% + 1500px);
   background-size: cover;
   opacity: 0;
 }
