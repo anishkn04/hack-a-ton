@@ -33,9 +33,6 @@ body {
     z-index: 5;
 }
 
-.navbar {
-    display: flex;
-}
 
 .navbar a {
     font-size: 2rem;
@@ -48,37 +45,31 @@ body {
 .navbar a#home:hover {
     color: red;
     border-bottom: 3px solid red;
-    transform: scale(1.05);
 }
 
 .navbar a#form:hover {
     color: rgb(38, 93, 21);
     border-bottom: 3px solid rgb(38, 93, 21);
-    transform: scale(1.05);
 }
 
 .navbar a#about:hover {
     color: purple;
     border-bottom: 3px solid purple;
-    transform: scale(1.05);
 }
 
 .navbar a#resources:hover {
     color: orange;
     border-bottom: 3px solid orange;
-    transform: scale(1.05);
 }
 
 .navbar a#status:hover {
     color: rgb(137, 15, 15);
     border-bottom: 3px solid rgb(137, 15, 15);
-    transform: scale(1.05);
 }
 
 .navbar a#contact:hover {
     color: rgb(98, 0, 203);
     border-bottom: 3px solid rgb(98, 0, 203);
-    transform: scale(1.05);
 }
 
 #menu-icon {
