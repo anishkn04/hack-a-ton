@@ -63,6 +63,14 @@ body {
   border: none;
   justify-content: right;
 }
+.label-items:hover {
+  cursor: pointer;
+  background-color: rgb(252, 213, 129);
+}
+
+#close_sidebar:hover{
+background-color: rgb(255, 248, 232);;
+}
 
 #navbar {
   display: flex;
@@ -197,7 +205,6 @@ body {
   width: 29%;
   max-width: 100px;
   margin: 2px;
-  /* align-self: auto; */
   min-width: 80px;
 }
 .item {
@@ -226,7 +233,6 @@ body {
   text-align: center;
   border-bottom: 2px solid;
 }
-
 
 
 
@@ -289,7 +295,7 @@ body {
     top: 10vh;
     height: calc(90vh);
     visibility: visible;
-    border-right: 2px solid salmon;
+  
   }
 
   #close_sidebar_big {
@@ -304,11 +310,7 @@ body {
 
   .labels-big-width {
     justify-content: center;
-    /* border: 2px dotted rgb(252, 213, 129); */
   }
 
-  .label-items:hover {
-    cursor: pointer;
-    background-color: rgb(252, 213, 129);
-  }
+ 
 }

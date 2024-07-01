@@ -5,10 +5,16 @@ let sidebar_img = document.getElementById("sidebar_img");
 let sidebar_close_img = document.getElementById("sidebar_close_img");
 let search_img = document.getElementById("search_img");
 let searchInput = document.getElementById("searchinput");
+let lbl_items = document.querySelectorAll('.label-items')
 
 sidebar_img.addEventListener("click", sidebarOpen);
 sidebar_close_img.addEventListener("click", sidebarClose);
 search_img.addEventListener("click", searchOpen);
+document.addEventListener('click', function(event) {
+  if (event.target.closest('.label-items')) {
+    labelSearch(event);
+  }
+});
 
 function sidebarOpen() {
   sidebar.style.visibility = "visible";
@@ -33,8 +39,23 @@ function searchOpen() {
 }
 
 
+async function fetchAndProcessJSON() {
+  try {
+    const response = await fetch("../resources/resources.json");
+    if (!response.ok) {
+      throw new Error("Failed to fetch JSON");
+    }
+    const data = await response.json();
 
-function createResourceElement(resource) {
+    return data;
+  } catch (error) {
+    console.error("Error fetching or processing JSON:", error);
+    return null;
+  }
+}
+
+
+function createResourceElement(resource, key) {
   const name = document.createElement("a");
   name.setAttribute("href", resource.link);
   name.setAttribute("target", "_blank");
@@ -56,12 +77,10 @@ function createResourceElement(resource) {
   const key_div = document.createElement("div");
   key_div.classList.add("keys");
 
-  resource.keys.forEach(key => {
-    const span = document.createElement("span");
-    span.classList.add("key");
-    span.textContent = key;
-    key_div.appendChild(span);
-  });
+  const span = document.createElement("span");
+  span.classList.add("key");
+  span.textContent = key;
+  key_div.appendChild(span);
 
   name.appendChild(item_div);
   name.appendChild(key_div);
@@ -72,15 +91,15 @@ function createResourceElement(resource) {
 
 async function jsonFunction() {
   try {
-    const response = await fetch("../resources/resources.json");
-    if (!response.ok) {
-      throw new Error("Failed to fetch JSON");
+    const data = await fetchAndProcessJSON();
+
+    if (!data) {
+      throw new Error("Failed to fetch or process JSON data");
     }
-    const data = await response.json();
+
     console.log("Working.......");
 
     const titles = Object.keys(data);
-
     const containers = document.querySelectorAll(".keycontainer");
 
     containers.forEach(container => {
@@ -92,37 +111,40 @@ async function jsonFunction() {
       });
     });
 
-    const maxLength = Math.max(
-      data.js.length,
-      data.php.length,
-      data.html.length,
-      data.css.length
-    );
-
-    const jsResources = data.js;
-    const phpResources = data.php;
-    const cssResources = data.css;
-    const htmlResources = data.html;
+    const maxLength = Math.max(...titles.map(key => data[key].length));
 
     for (let i = 0; i < maxLength; i++) {
-      if (i < jsResources.length) {
-        createResourceElement(jsResources[i]);
-      }
-      if (i < phpResources.length) {
-        createResourceElement(phpResources[i]);
-      }
-      if (i < cssResources.length) {
-        createResourceElement(cssResources[i]);
-      }
-      if (i < htmlResources.length) {
-        createResourceElement(htmlResources[i]);
-      }
+      titles.forEach(key => {
+        console.log("kmmm")
+        console.log(key)
+        if (i < data[key].length) {
+          createResourceElement(data[key][i], key);
+        }
+      });
     }
-
-    console.log("Keys exported successfully");
   } catch (error) {
-    console.error("Error reaching or processing JSON:", error);
+    console.error("Error in jsonFunction:", error);
   }
 }
+
+async function labelSearch(event){
+  const data = await fetchAndProcessJSON();
+
+  if (!data) {
+    throw new Error("Failed to fetch or process JSON data");
+  }
+
+  console.log("Working.t.....");
+
+  const clickedLabel = event.target.innerText;
+  const resources = data[clickedLabel];
+  const item_container = document.getElementById("item-container");
+  item_container.innerHTML=""
+  resources.forEach(resource => {
+   createResourceElement(resource, clickedLabel);
+    
+  });
+}
+
 
 jsonFunction();
