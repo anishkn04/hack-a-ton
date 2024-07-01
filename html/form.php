@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SELLER INFORMATION</title>
+    <title>Hackathon Form</title>
     <link rel="stylesheet" href="form.css">
 </head>
 <body>
-    <h1>SELLER INFORMATION</h1>
+    <h1>HACKATHON FORM</h1>
     <form method= "POST" action="<?php $_SERVER['PHP_SELF'];?>">
         <div class="formdesign">
             Name: <input type="text" name="fname" required></b>
@@ -25,28 +25,10 @@
         </div>
 
         <div class="formdesign">
-            Name of book: <input type="text" name="bname" required></b>
+            Topic of project:<input type="text" name="bname" required></b>
         </div>
 
-        <div class="formdesign">
-            Number of book: <input type="text" name="bnumber" required></b>
-        </div>
        
-        <div class="formdesign">
-        Selling price: <input type="text" name="sprice" required></b>
-        </div>
-
-        <div class="formdesign">
-            Genre: <input type="text" name="fgenre" required></b>
-        </div>
-
-        <div class="formdesign">
-            Date of purchase: <input type="date" name="fdate" required></b>
-        </div>
-
-        <div class="formdesign">
-            Delivery mode: <input type="text" name="fmode" required></b>
-        </div>
 
         <input class="but" type="submit" value="Submit" name="submit">
 
@@ -56,21 +38,14 @@
 <?php
 include "connect.php";
 if(isset($_POST['submit'])){
-    $seller_name= $_POST['fname'];
+    $name= $_POST['fname'];
     $email=$_POST['femail'];
     $phone=$_POST['fphone'];
     $s_address=$_POST['faddress'];
-    $nameofbook=$_POST['bname'];
-    $numberofbook=$_POST['bnumber'];
-    $sellingprice=$_POST['sprice'];
-    $genre=$_POST['fgenre'];
-    $dateofpurchase=$_POST['fdate'];
-    $deliverymode=$_POST['fmode'];
+    $topic=$_POST['bname'];
 
-$sql= "INSERT INTO sellerinfo(sellername,email, phone,saddress,nameofbook,numberofbook, sellingprice,
-genre, dateofpurchase, deliverymode) 
-VALUES('$seller_name', '$email', '$phone', '$s_address', '$nameofbook', '$numberofbook','$sellingprice',
-'$genre','$dateofpurchase','$deliverymode')";
+$sql= "INSERT INTO hackathoninfo(sname,email, phone,saddress,title) 
+VALUES('$name', '$email', '$phone', '$s_address', '$topic')";
 $result=mysqli_query($conn,$sql);
 }
 ?>
