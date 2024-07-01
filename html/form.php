@@ -28,6 +28,18 @@
             Topic of project:<input type="text" name="bname" required></b>
         </div>
 
+        <div class="formdesign">
+            Skills/Language/Frameworks: <br>
+            <input type="checkbox" name="skills[]" value="HTML"> HTML<br>
+            <input type="checkbox" name="skills[]" value="CSS"> CSS<br>
+            <input type="checkbox" name="skills[]" value="JavaScript"> JavaScript<br>
+            <input type="checkbox" name="skills[]" value="Python"> Python<br>
+            <input type="checkbox" name="skills[]" value="Java"> Java<br>
+            <input type="checkbox" name="skills[]" value="C++"> C++<br>
+            <input type="checkbox" name="skills[]" value="React"> React<br>
+            <input type="checkbox" name="skills[]" value="Angular"> Angular<br>
+            <input type="checkbox" name="skills[]" value="Node.js"> Node.js<br>
+        </div>
        
 
         <input class="but" type="submit" value="Submit" name="submit">
@@ -43,9 +55,13 @@ if(isset($_POST['submit'])){
     $phone=$_POST['fphone'];
     $s_address=$_POST['faddress'];
     $topic=$_POST['bname'];
+    $skills = $_POST['skills'];
 
-$sql= "INSERT INTO hackathoninfo(sname,email, phone,saddress,title) 
-VALUES('$name', '$email', '$phone', '$s_address', '$topic')";
+    // Serialize skills array into a JSON string
+    $skills_json = json_encode($skills);
+
+$sql= "INSERT INTO hackathoninfo(sname,email, phone,saddress,title,skills) 
+VALUES('$name', '$email', '$phone', '$s_address', '$topic', '$skills_json')";
 $result=mysqli_query($conn,$sql);
 }
 ?>
