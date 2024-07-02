@@ -92,7 +92,7 @@ function createResourceElement(resource, key) {
   item_container.appendChild(name);
 }
 
-async function jsonFunction() {
+async function jsonFunction(whitespace) {
   try {
     const data = await fetchAndProcessJSON();
 
@@ -104,7 +104,7 @@ async function jsonFunction() {
 
     const titles = Object.keys(data);
     const containers = document.querySelectorAll(".keycontainer");
-
+    if(whitespace !=  "a"){
     containers.forEach(container => {
       titles.forEach(key => {
         const li = document.createElement("li");
@@ -113,7 +113,7 @@ async function jsonFunction() {
         container.appendChild(li);
       });
     });
-
+  }
     const maxLength = Math.max(...titles.map(key => data[key].length));
 
     for (let i = 0; i < maxLength; i++) {
@@ -156,6 +156,7 @@ async function labelSearch(clickedLabel){
    createResourceElement(resource, clickedLabel);
     
   });
+  item_container.style.gridTemplateColumns='repeat(auto-fill, minmax(325px, 1fr))';
 }
   sidebarClose();
 }
@@ -167,7 +168,8 @@ async function searchByText() {
   
   if (!search) {
     item_container.innerHTML = "";
-    await jsonFunction();
+    item_container.style.gridTemplateColumns='repeat(auto-fill, minmax(325px, 1fr))';
+    await jsonFunction("a");
     return;
   }
   
@@ -178,11 +180,13 @@ async function searchByText() {
   
   titles.forEach(key => {
     if (lowerSearch === key) {
+      
       labelSearch(lowerSearch);
       return;
     }
 
     if (lowerSearch === "javascript") {
+     
       labelSearch("js");
       return;
     }
