@@ -25,6 +25,11 @@
         </div>
 
         <div class="formdesign">
+            Detail of your team: <br>
+            <textarea name="team_details" rows="4" cols="50" required></textarea>
+        </div>
+
+        <div class="formdesign">
             Topic of project:<input type="text" name="bname" required></b>
         </div>
 
@@ -41,6 +46,10 @@
             <input type="checkbox" name="skills[]" value="Node.js"> Node.js<br>
         </div>
        
+        <div class="formdesign">
+            Complaints/Feedbacks/Suggestions: <br>
+            <textarea name="feedback" rows="4" cols="50"></textarea>
+        </div>
 
         <input class="but" type="submit" value="Submit" name="submit">
 
@@ -54,14 +63,16 @@ if(isset($_POST['submit'])){
     $email=$_POST['femail'];
     $phone=$_POST['fphone'];
     $s_address=$_POST['faddress'];
+    $team_details = $_POST['team_details'];
     $topic=$_POST['bname'];
     $skills = $_POST['skills'];
+    $feedback = $_POST['feedback'];
 
     // Serialize skills array into a JSON string
     $skills_json = json_encode($skills);
 
-$sql= "INSERT INTO hackathoninfo(sname,email, phone,saddress,title,skills) 
-VALUES('$name', '$email', '$phone', '$s_address', '$topic', '$skills_json')";
+$sql= "INSERT INTO hackathoninfo(sname,email, phone,saddress,team_details,title,skills,feedback) 
+VALUES('$name', '$email', '$phone', '$s_address', '$team_details' ,'$topic', '$skills_json', '$feedback')";
 $result=mysqli_query($conn,$sql);
 }
 ?>
