@@ -681,7 +681,7 @@ video {
     width: 100px;
     height: 100px;
     top: initial;
-    bottom: -170px;
+    bottom: -130px;
   }
 
   .slider .slides:nth-child(1),
