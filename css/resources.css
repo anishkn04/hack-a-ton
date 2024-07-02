@@ -207,9 +207,10 @@ background-color: rgb(255, 248, 232);;
   margin: 2px;
   min-width: 80px;
 }
+
+
 .item {
   text-decoration:  none;
-  color: rgb(9, 9, 9);
   min-width: 250px;
   height: 325px;
   width: 85%;
@@ -219,21 +220,30 @@ background-color: rgb(255, 248, 232);;
   text-align: left;
   justify-content: space-between;
   padding: 20px;
-  border: 2px solid;
+  border: 2px solid #090909;
   place-self: center;
+  /* background-color: #FCD581; */
 }
 
 .item:hover {
-  background-color: lightblue;
+  background-color: #424B54;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
+.item:hover .key{
+  background-color: #ffffff;
+}
 .name {
   color: rgb(9, 9, 9);
   text-align: center;
   border-bottom: 2px solid;
 }
 
+.no-match {
+  text-align: center; 
+  margin-top: 20px; 
+  color: #999;
+}
 
 
 

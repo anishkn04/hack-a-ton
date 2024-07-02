@@ -6,15 +6,18 @@ let sidebar_close_img = document.getElementById("sidebar_close_img");
 let search_img = document.getElementById("search_img");
 let searchInput = document.getElementById("searchinput");
 let lbl_items = document.querySelectorAll('.label-items')
+let go_button = document.getElementById("go_button")
+
 
 sidebar_img.addEventListener("click", sidebarOpen);
 sidebar_close_img.addEventListener("click", sidebarClose);
 search_img.addEventListener("click", searchOpen);
 document.addEventListener('click', function(event) {
   if (event.target.closest('.label-items')) {
-    labelSearch(event);
+    labelSearchEvent(event);
   }
 });
+go_button.addEventListener("click",searchByText)
 
 function sidebarOpen() {
   sidebar.style.visibility = "visible";
@@ -115,9 +118,10 @@ async function jsonFunction() {
 
     for (let i = 0; i < maxLength; i++) {
       titles.forEach(key => {
-        console.log("kmmm")
+        
         console.log(key)
         if (i < data[key].length) {
+          console.log(data[key][i])
           createResourceElement(data[key][i], key);
         }
       });
@@ -127,7 +131,7 @@ async function jsonFunction() {
   }
 }
 
-async function labelSearch(event){
+async function labelSearchEvent(event){
   const data = await fetchAndProcessJSON();
 
   if (!data) {
@@ -137,14 +141,92 @@ async function labelSearch(event){
   console.log("Working.t.....");
 
   const clickedLabel = event.target.innerText;
+  console.log(clickedLabel)
+  labelSearch(clickedLabel)
+
+}
+
+async function labelSearch(clickedLabel){
+  const data = await fetchAndProcessJSON();
   const resources = data[clickedLabel];
   const item_container = document.getElementById("item-container");
+  if(clickedLabel != ""){
   item_container.innerHTML=""
   resources.forEach(resource => {
    createResourceElement(resource, clickedLabel);
     
   });
 }
+  sidebarClose();
+}
 
+
+async function searchByText() {
+  const search = searchInput.value;
+  const item_container = document.getElementById("item-container");
+  
+  if (!search) {
+    item_container.innerHTML = "";
+    await jsonFunction();
+    return;
+  }
+  
+  const matchedResources = [];
+  const data = await fetchAndProcessJSON();
+  const lowerSearch = search.toLowerCase();
+  const titles = Object.keys(data);
+  
+  titles.forEach(key => {
+    if (lowerSearch === key) {
+      labelSearch(lowerSearch);
+      return;
+    }
+
+    if (lowerSearch === "javascript") {
+      labelSearch("js");
+      return;
+    }
+    
+    data[key].forEach(check => {
+      let nameLowercase = check.name.toLowerCase();
+      let descLowercase = check.description.toLowerCase();
+      
+      if (nameLowercase.endsWith('.')) {
+        nameLowercase = nameLowercase.slice(0, -1);
+      }
+      if (descLowercase.endsWith('.')) {
+        descLowercase = descLowercase.slice(0, -1);
+      }
+      
+      if (nameLowercase.includes(lowerSearch) || descLowercase.includes(lowerSearch)) {
+        let found = false;
+        for (let i = 0; i < matchedResources.length; i++) {
+          if (matchedResources[i][key] === check) {
+            found = true;
+            break;
+          }
+        }
+        if (!found) {
+          matchedResources.push({ [key]: check });
+        }
+      }
+    });
+  });
+  
+  item_container.innerHTML = "";
+  if (matchedResources.length === 0) {
+    const noMatchElement = document.createElement('div');
+    noMatchElement.classList.add('no-match');
+    noMatchElement.textContent = 'No match found';
+    item_container.style.gridTemplateColumns="none"
+    item_container.appendChild(noMatchElement);
+  } else {
+    matchedResources.forEach(item => {
+      const key = Object.keys(item)[0];
+      item_container.style.gridTemplateColumns='repeat(auto-fill, minmax(325px, 1fr))';
+      createResourceElement(item[key], key);
+    });
+  }
+}
 
 jsonFunction();
