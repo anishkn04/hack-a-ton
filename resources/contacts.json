@@ -10,7 +10,7 @@
             "portfolio": "https://www.paudelnishan.com.np",
             "teamName": "Terai-Toads",
             "projectRepo": "",
-            "projectImage": "",
+            "projectImage": "../images/eagle.jpg",
             "projectDesc": ""
         },
         {
@@ -23,7 +23,7 @@
             "portfolio": "",
             "teamName": "Mote-Mongooses",
             "projectRepo": "",
-            "projectImage": "",
+            "projectImage": "../images/lion.jpg",
             "projectDesc": ""
         },
         {
@@ -36,7 +36,7 @@
             "portfolio": "",
             "teamName": "Lamba-Langurs",
             "projectRepo": "",
-            "projectImage": "",
+            "projectImage": "../images/crocks.jpg",
             "projectDesc": ""
         },
         {
@@ -49,7 +49,7 @@
             "portfolio": "",
             "teamName": "Terai-Toads",
             "projectRepo": "",
-            "projectImage": "",
+            "projectImage": "../images/eagle.jpg",
             "projectDesc": ""
         },
         {
@@ -62,7 +62,7 @@
             "portfolio": "https://manishrajupreti.com.np",
             "teamName": "Lamba-Langurs",
             "projectRepo": "",
-            "projectImage": "",
+            "projectImage": "../images/crocks.jpg",
             "projectDesc": ""
         },
         {
@@ -75,7 +75,7 @@
             "portfolio": "",
             "teamName": "Mote-Mongooses",
             "projectRepo": "",
-            "projectImage": "",
+            "projectImage": "../images/lion.jpg",
             "projectDesc": ""
         },
         {
@@ -88,7 +88,7 @@
             "portfolio": "https://babhishek.com.np/",
             "teamName": "Diwaane-Dingoes",
             "projectRepo": "",
-            "projectImage": "",
+            "projectImage": "../images/bull.avif",
             "projectDesc": ""
         },
         {
@@ -101,7 +101,7 @@
             "portfolio": "",
             "teamName": "Diwaane-Dingoes",
             "projectRepo": "",
-            "projectImage": "",
+            "projectImage": "../images/bull.avif",
             "projectDesc": ""
         }
     ],
