@@ -38,6 +38,10 @@
         </div>
 
         <div class="formdesign">
+                Preferred start date for Hack-A-Ton: <input type="date" name="start_dates" required>
+        </div>
+
+        <div class="formdesign">
             Skills/Language/Frameworks: <br>
             <input type="checkbox" name="skills[]" value="HTML"> HTML<br>
             <input type="checkbox" name="skills[]" value="CSS"> CSS<br>
@@ -49,6 +53,19 @@
             <input type="checkbox" name="skills[]" value="Angular"> Angular<br>
             <input type="checkbox" name="skills[]" value="Node.js"> Node.js<br>
         </div>
+
+        <div class="formdesign">
+             Preferred Skills/Language/Frameworks: <br>
+            <input type="checkbox" name="skils[]" value="HTML"> HTML<br>
+            <input type="checkbox" name="skils[]" value="CSS"> CSS<br>
+            <input type="checkbox" name="skils[]" value="JavaScript"> JavaScript<br>
+            <input type="checkbox" name="skils[]" value="Python"> Python<br>
+            <input type="checkbox" name="skils[]" value="Java"> Java<br>
+            <input type="checkbox" name="skils[]" value="C++"> C++<br>
+            <input type="checkbox" name="skils[]" value="React"> React<br>
+            <input type="checkbox" name="skils[]" value="Angular"> Angular<br>
+            <input type="checkbox" name="skils[]" value="Node.js"> Node.js<br>
+        </div>      
        
         <div class="formdesign">
             Complaints/Feedbacks/Suggestions: <br>
@@ -60,6 +77,7 @@
     </form>
 
 </main>
+<script src="form.js"></script>
 </body>
 </html>
 <?php
@@ -71,14 +89,17 @@ if(isset($_POST['submit'])){
     $s_address=$_POST['faddress'];
     $team_details = $_POST['team_details'];
     $topic=$_POST['bname'];
+    $start_dates=$_POST['start_dates'];
     $skills = $_POST['skills'];
+    $skils=$_POST['skils'];
     $feedback = $_POST['feedback'];
 
     // Serialize skills array into a JSON string
     $skills_json = json_encode($skills);
+    $skils_json=json_encode($skils);
 
-$sql= "INSERT INTO hackathoninfo(sname,email, phone,saddress,team_details,title,skills,feedback) 
-VALUES('$name', '$email', '$phone', '$s_address', '$team_details' ,'$topic', '$skills_json', '$feedback')";
+$sql= "INSERT INTO hackathoninfo(sname,email, phone,saddress,team_details,title,start_dates,skills,skils,feedback) 
+VALUES('$name', '$email', '$phone', '$s_address', '$team_details' ,'$topic', '$start_dates','$skills_json','$skils_json', '$feedback')";
 $result=mysqli_query($conn,$sql);
 }
 ?>
