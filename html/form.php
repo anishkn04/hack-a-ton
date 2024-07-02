@@ -6,7 +6,11 @@
     <link rel="stylesheet" href="form.css">
 </head>
 <body>
-    <h1>HACKATHON FORM</h1>
+    <header>
+        <h1>PREP-A-TON</h1>
+    </header>
+    <main>
+    <h3>HACKATHON FORM</h3>
     <form method= "POST" action="<?php $_SERVER['PHP_SELF'];?>">
         <div class="formdesign">
             Name: <input type="text" name="fname" required></b>
@@ -54,6 +58,8 @@
         <input class="but" type="submit" value="Submit" name="submit">
 
     </form>
+
+</main>
 </body>
 </html>
 <?php
