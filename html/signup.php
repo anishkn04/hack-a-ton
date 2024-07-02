@@ -24,7 +24,7 @@
 
                 <!-- sign up form  -->
                 <form action="" class="mt-8 w-[80%] lg:w-96 mx-auto space-y-4">
-                    <h4>SignUp to manage your account</h4>
+                    <h4>Sign Up to manage your account</h4>
                     
                     <input type="text" placeholder="Name"
                     class="w-full px-4 py-2 border">
@@ -38,14 +38,10 @@
                     <input type="text" placeholder="GoupName"
                     class="w-full px-4 py-2 border">
 
-                    <!-- <div class="text-blue-600 cursor-pointer hover:text-blue-400">
-                        Forget your password?
-                    </div> -->
-
                     <div>
                         <div 
-                        class="border rounded text-center text-white py-2 border-2 border-[#424B54] bg-[#424B54] text-white p-1 w-full rounded hover:bg-transparent hover:text-[#424B54] hover:font-bold "
-                        >SignUp</div>
+                        class="border rounded text-center  py-2 border-2 border-[#424B54] bg-[#424B54] text-white p-1 w-full hover:bg-transparent hover:text-[#424B54] cursor-pointer hover:font-bold "
+                        >Sign Up</div>
                     </div>
                 </form>
             </div>
