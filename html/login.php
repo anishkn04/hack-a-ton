@@ -29,10 +29,10 @@
                 <form action="" class="mt-8 w-[80%] lg:w-96 mx-auto space-y-4">
                     <h4>Login to get access to your account.</h4>
                     
-                    <input type="email" placeholder="Email"
+                    <input id="" name="" type="email" placeholder="Email"
                     class="w-full px-4 py-2 border">
 
-                    <input type="password" placeholder="Password"
+                    <input id="" name="" type="password" placeholder="Password"
                     class="w-full px-4 py-2 border">
 
 
@@ -41,9 +41,7 @@
                     </div> -->
 
                     <div>
-                        <div 
-                        class="border rounded text-center cursor-pointer  py-2 border-2 border-[#424B54] bg-[#424B54] text-white p-1 w-full hover:bg-transparent hover:text-[#424B54] hover:font-bold "
-                        >Login</div>
+                        <button type="submit" id="submit" class="border rounded text-center  py-2 border-2 border-[#424B54] bg-[#424B54] text-white p-1 w-full hover:bg-transparent hover:text-[#424B54] cursor-pointer hover:font-bold" name="submit" >Login</button>
                     </div>
 
                     

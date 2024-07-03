@@ -23,25 +23,27 @@
                 </div>
 
                 <!-- sign up form  -->
-                <form action="" class="mt-8 w-[80%] lg:w-96 mx-auto space-y-4">
+                <form action="<?php $_SERVER['PHP_SELF']?>" method="post"
+                    class="mt-8 w-[80%] lg:w-96 mx-auto space-y-4">
                     <h4>Sign Up to manage your account</h4>
                     
-                    <input type="text" placeholder="Name"
+                    <input id="mname" name="mname" type="text" placeholder="Name"
                     class="w-full px-4 py-2 border">
 
-                    <input type="email" placeholder="Email"
+                    <input id="memail" name="memail" type="email" placeholder="Email"
                     class="w-full px-4 py-2 border">
 
-                    <input type="password" placeholder="Password"
+                    <input id="mpassword" name="mpassword" type="password" placeholder="Password"
                     class="w-full px-4 py-2 border">
 
-                    <input type="text" placeholder="GoupName"
+                    <input id="mcpassword" name="mcpassword" type="password" placeholder="Confirm Password"
+                    class="w-full px-4 py-2 border">
+
+                    <input id="mgroupname" name="mgroupname" type="text" placeholder="GoupName"
                     class="w-full px-4 py-2 border">
 
                     <div>
-                        <div 
-                        class="border rounded text-center  py-2 border-2 border-[#424B54] bg-[#424B54] text-white p-1 w-full hover:bg-transparent hover:text-[#424B54] cursor-pointer hover:font-bold "
-                        >Sign Up</div>
+                        <button type="submit" id="submit" class="border rounded text-center  py-2 border-2 border-[#424B54] bg-[#424B54] text-white p-1 w-full hover:bg-transparent hover:text-[#424B54] cursor-pointer hover:font-bold" name="submit" >Sign Up</button>
                     </div>
                 </form>
             </div>
@@ -49,3 +51,61 @@
     </div>
 </body>
 </html>
+
+
+
+
+
+<?php
+    include './connect.php';
+
+    if (isset($_POST['submit'])){
+
+        $name = filter_input(INPUT_POST, "mname", FILTER_SANITIZE_SPECIAL_CHARS);
+
+        $email = filter_input(INPUT_POST, "memail", FILTER_SANITIZE_SPECIAL_CHARS);
+
+        $password = $_POST['mpassword'];
+
+        $cpassword = $_POST['mcpassword'];
+
+        $groupname = filter_input(INPUT_POST, "mgroupname",FILTER_SANITIZE_SPECIAL_CHARS);
+
+
+        $sql = $connection->prepare ("SELECT * FROM signup where m_email = ?");
+        $sql -> bind_param("s",$email);
+        $sql->execute();
+
+        $result = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        if(count($result) > 0){
+            echo "username already exists";
+        }
+        else 
+        {
+            if($password == $cpassword) {
+                $hash = password_hash($password, PASSWORD_DEFAULT);
+
+                $inserData = $connection->prepare ("INSERT INTO signup (m_name, m_email, m_password, m_groupname, date_registered) VALUES 
+                ( ?, ?, ?, ?, ?)");
+
+
+                $currentTimestamp = date('Y-m-d H:i:s'); // Get the current timestamp in the format 'YYYY-MM-DD HH:MM:SS'
+                $inserData->bind_param("sssss", $name, $email, $hash, $groupname, $currentTimestamp);
+                $inserData->execute();
+
+
+                if (!$inserData->execute()) {
+                    die('Execute failed: ' . htmlspecialchars($inserData->error));
+                }
+    
+                echo "You are registered";
+            } else {
+                echo "Match the password in both fields";
+            }
+        }
+
+    }
+
+    $sql->close();
+    $connection->close();
+?>
