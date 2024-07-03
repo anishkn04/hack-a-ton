@@ -1,36 +1,57 @@
-/* Abhishek Bhattarai */
-@font-face {
-    font-family: "joshFont";
-    src: url("Jost-Regular.ttf");
-  }
-  
-  * {
-    font-family: "joshFont" ,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-.title{
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFFFF;
+    padding: 20px;
+}
+
+#teams-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.team {
+    background-color: #FFF8E8;
+    padding: 20px;
+    margin: 10px;
+   
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
     text-align: center;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s;
 }
 h1{
     text-align: center;
 }
-body {
-    background-color: #FFFFFF;
-    display:grid;
-    padding: 20px;
+
+.team:hover {
+    transform: scale(1.05);
 }
-.team {
-    background-color: #FFF8E8;
-    padding: 20px;
-    margin-bottom: 20px;
+
+.team img {
+    width: 100%;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.team h2 {
-    margin-bottom: 10px;
+
+.team-details {
+    display: none;
+    text-align: left;
+    margin-top: 10px;
 }
+
 .member {
     margin-bottom: 10px;
 }
+
 .member a {
     margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .team {
+        width: 100%;
+        max-width: 400px;
+    }
 }
