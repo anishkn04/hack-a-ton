@@ -11,13 +11,32 @@
     </header>
     <main>
     <h3>HACKATHON FORM</h3>
+
+    <?php
+        session_start();
+        include "connect.php";
+
+        if (isset($_SESSION['user_name'])) {
+            $username = $_SESSION['user_name'];
+
+            // Fetch data from demoinfo table
+            $demo_sql = "SELECT lname, lemail FROM demoinfo WHERE lname='$username' LIMIT 1";
+            $demo_result = mysqli_query($conn, $demo_sql);
+            $demo_data = mysqli_fetch_assoc($demo_result);
+
+            $demo_name = $demo_data['lname'];
+            $demo_email = $demo_data['lemail'];
+        }
+    ?>
+
     <form method= "POST" action="<?php $_SERVER['PHP_SELF'];?>">
+
         <div class="formdesign">
-            Name: <input type="text" name="fname" required></b>
+                Name: <input type="text" name="fname" value="<?php echo $demo_name; ?>" readonly>
         </div>
 
         <div class="formdesign">
-            Email: <input type="email" name="femail" required></b>
+                Email: <input type="email" name="femail" value="<?php echo $demo_email; ?>" readonly>
         </div>
 
         <div class="formdesign">
@@ -27,6 +46,8 @@
         <div class="formdesign">
             Address: <input type="text" name="faddress" required></b>
         </div>
+
+        
 
         <div class="formdesign">
             Detail of your team: <br>

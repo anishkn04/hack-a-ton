@@ -22,13 +22,20 @@
 </body>
 </html>
 <?php
+session_start();
 include "connect.php";
-if(isset($_POST['submit'])){
-    $lname= $_POST['lname'];
-    $lemail=$_POST['lemail'];
 
-$sql= "INSERT INTO demoinfo(lname,lemail) 
-VALUES('$lname', '$lemail')";
-$result=mysqli_query($conn,$sql);
+if(isset($_POST['submit'])){
+    $lname = $_POST['lname'];
+    $lemail = $_POST['lemail'];
+
+    $sql = "INSERT INTO demoinfo(lname, lemail) VALUES('$lname', '$lemail')";
+    $result = mysqli_query($conn, $sql);
+
+    if ($result) {
+        $_SESSION['user_name'] = $lname;
+    } else {
+        echo "Error inserting record: " . mysqli_error($conn);
+    }
 }
 ?>

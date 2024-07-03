@@ -15,3 +15,6 @@ skillsCheckboxes.forEach(skillCheckbox => {
         });
     });
 });
+
+
+
