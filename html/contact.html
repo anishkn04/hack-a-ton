@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/contact.css">
-    <title>
-        hack-a-ton
-    </title>
+    <title>Hack-a-ton</title>
+
 </head>
 
 <body>
@@ -15,23 +14,26 @@
     <div id="teams-container"></div>
 
     <script>
-
         fetch('../resources/contacts.json')
             .then(response => response.json())
             .then(data => {
                 const teamsContainer = document.getElementById('teams-container');
 
-
                 data.teams.forEach(team => {
-
                     const teamDiv = document.createElement('div');
                     teamDiv.classList.add('team');
-
 
                     const teamName = document.createElement('h2');
                     teamName.textContent = team.name;
                     teamDiv.appendChild(teamName);
 
+                    const teamImage = document.createElement('img');
+                    teamImage.src = `../images/teams/${team.name.toLowerCase().replace(/ /g, '-')}.jpg`;
+                    teamImage.alt = `${team.name} Image`;
+                    teamDiv.appendChild(teamImage);
+
+                    const teamDetails = document.createElement('div');
+                    teamDetails.classList.add('team-details');
 
                     team.members.forEach(memberName => {
                         const member = data.members.find(m => m.name === memberName);
@@ -48,10 +50,18 @@
                                 ${member.portfolio ? `<strong>Portfolio:</strong> <a href="${member.portfolio}" target="_blank">${member.portfolio}</a> <br>` : ''}
                             `;
                             memberDiv.innerHTML = memberInfo;
-                            teamDiv.appendChild(memberDiv);
+                            teamDetails.appendChild(memberDiv);
                         }
                     });
 
+                    teamDiv.appendChild(teamDetails);
+
+                    teamDiv.addEventListener('click', () => {
+                        document.querySelectorAll('.team-details').forEach(details => {
+                            details.style.display = 'none';
+                        });
+                        teamDetails.style.display = 'block';
+                    });
 
                     teamsContainer.appendChild(teamDiv);
                 });
