@@ -20,14 +20,6 @@
     
   </style>
 
-  <script>
-    var test = document.getElementById('test');
-    window.addEventListener('scroll', function (e) {
-      var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-      test.style.opacity = Math.max(0, Math.min(1, -scroll / 400 + 2));
-      document.body.style.backgroundColor = `rgba(249, 249, 249, ${Math.max(0, Math.min(1, -scroll / 400 + 2))})`;
-    });
-  </script>
 
 </head>
 
@@ -89,6 +81,14 @@
     </div>
   </div>
 </body>
-</body>
+
+  <script>
+    var test = document.getElementById('test');
+    window.addEventListener('scroll', function (e) {
+      var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      test.style.opacity = Math.max(0, Math.min(1, -scroll / 400 + 2));
+      document.body.style.backgroundColor = `rgba(249, 249, 249, ${Math.max(0, Math.min(1, -scroll / 400 + 2))})`;
+    });
+  </script>
 
 </html>
