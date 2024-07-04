@@ -16,5 +16,15 @@ skillsCheckboxes.forEach(skillCheckbox => {
     });
 });
 
+preferredSkillsCheckboxes.forEach(preferredSkillsCheckbox => {
+    preferredSkillsCheckbox.addEventListener('change', function(){
+        skillsCheckboxes.forEach(skillsCheckbox => {
+            if(skillsCheckbox.value === preferredSkillsCheckbox.value){
+                skillsCheckbox.disabled = preferredSkillsCheckbox.checked;
+            }
+        });
+    });
+});
+
 
 
