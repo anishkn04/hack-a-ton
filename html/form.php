@@ -48,15 +48,13 @@
             Address: <input type="text" name="faddress" required></b>
         </div>
 
-        
-
         <div class="formdesign">
-            Detail of your team: <br>
-            <textarea name="team_details" rows="4" cols="50" required></textarea>
+            Topic of project:<input type="text" name="bname" required></b>
         </div>
 
         <div class="formdesign">
-            Topic of project:<input type="text" name="bname" required></b>
+            Description of your project: <br>
+            <textarea name="team_details" rows="4" cols="50" required></textarea>
         </div>
 
         <div class="formdesign">
@@ -92,6 +90,12 @@
         <div class="formdesign">
             Complaints/Feedbacks/Suggestions: <br>
             <textarea name="feedback" rows="4" cols="50"></textarea>
+        </div>
+
+        <div class="formdesign">
+            <input type="checkbox" id="agreeTerms" name="agreeTerms"> 
+            <label for="agreeTerms">I agree to the hackathon terms and marking policy</label>
+            <br><span id="termsError" style="color:red;"></span>
         </div>
 
         <input class="but" type="submit" value="Submit" name="submit">

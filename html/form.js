@@ -27,4 +27,15 @@ preferredSkillsCheckboxes.forEach(preferredSkillsCheckbox => {
 });
 
 
+document.getElementById('hackathonForm').addEventListener('submit', function(event) {
+    var agreeTerms = document.getElementById('agreeTerms');
+    var termsError = document.getElementById('termsError');
+    if (!agreeTerms.checked) {
+        termsError.textContent = "* You must agree to the terms.";
+        event.preventDefault(); // Prevent form submission
+    } else {
+        termsError.textContent = "";
+    }
+});
+
 
