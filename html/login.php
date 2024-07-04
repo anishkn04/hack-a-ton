@@ -26,13 +26,14 @@
                 </div>
 
                 <!-- Login up form  -->
-                <form action="" class="mt-8 w-[80%] lg:w-96 mx-auto space-y-4">
+                <form  action="<?php $_SERVER['PHP_SELF']?>" method="post"
+                    class="mt-8 w-[80%] lg:w-96 mx-auto space-y-4">
                     <h4>Login to get access to your account.</h4>
                     
-                    <input id="" name="" type="email" placeholder="Email"
+                    <input id="" name="mumName" type="email" placeholder="Email"
                     class="w-full px-4 py-2 border">
 
-                    <input id="" name="" type="password" placeholder="Password"
+                    <input id="" name="numPassword" type="password" placeholder="Password"
                     class="w-full px-4 py-2 border">
 
 
@@ -49,9 +50,49 @@
             </div>
             <div>
               <h4 class="text-center mt-2">OR</h4>
-              <span class="mt-2 text-center text-[#424B54]"><a href="">create account?</a></span>
+              <span class="mt-2 text-center text-[#424B54]"><a href="./signup.php">create account?</a></span>
             </div>
         </div>
     </div>
   </body>
 </html>
+
+
+
+<?php
+
+  include './connect.php';
+  $login = false;
+  $showError = false;
+
+  if(isset($_POST['submit']))
+  {
+    $email = filter_input(INPUT_POST, "mumName", FILTER_SANITIZE_SPECIAL_CHARS);
+
+    $password = $_POST['numPassword'];
+
+    $selectData = "SELECT * FROM signup WHERE m_email = '$email'";
+    $result = mysqli_query($connection, $selectData);
+    $num = mysqli_num_rows($result);
+    if($num == 1){
+      while($rows = mysqli_fetch_assoc($result)){
+        if(password_verify($password,$rows['m_password'])){
+          $login = true;
+          session_start();
+          $_SESSION['loggedin'] = true;
+          $_SESSION['username'] = $email;
+          header("location: index.php");
+        }
+        else{
+          echo 'Invalid credentials';
+        }   
+      }
+    }
+    else{
+      echo "provided credentials doesn't match in our database";
+    }    
+    
+  }
+
+
+?>

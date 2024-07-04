@@ -12,16 +12,12 @@
 
         // $sqlCreateDatabase = "CREATE DATABASE IF NOT EXISTS $dbname";
 
-        // if($connection->query($sqlCreateDatabase) === FALSE){
-        //     die("Error creating database: ".$connection->error);
-        // }else {
-        //     echo "Database created successfully or already exists.";
-        // }
         if(!$connection){
-            echo "can't connect";
-        }else{
-            echo "sucess";
+            die("Error creating database: ".$connection->error);
+        }else {
+            echo "Database connected successfully";
         }
+    
 
     }catch (Exception $e) {
         echo "<script> alert($e) </script>";
