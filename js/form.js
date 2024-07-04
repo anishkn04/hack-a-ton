@@ -38,4 +38,10 @@ document.getElementById('hackathonForm').addEventListener('submit', function(eve
     }
 });
 
-
+document.getElementById("dropper").addEventListener('click', () => {
+    var terms = document.getElementById("terms");
+    var dropper = document.getElementById("dropper");
+    terms.classList.toggle("hidden");
+    terms.classList.toggle("block");
+    dropper.classList.toggle("rotator")
+})
