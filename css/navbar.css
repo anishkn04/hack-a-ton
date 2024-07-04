@@ -75,7 +75,10 @@ body {
     right: 40px;
 }
 
-
+#close-icon
+{
+    display: none;
+}
 @media(max-width:1400px){
     html{
         font-size: 75%;
