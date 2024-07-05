@@ -1,8 +1,8 @@
 <?php
-$servername="localhost:3306";
-$username="ODBC";
+$servername="";
+$username="";
 $password="";
-$dbname="demo";
+$dbname="";
 $conn=mysqli_connect($servername,$username,$password,$dbname);
 
 $sql    = "CREATE TABLE IF NOT EXISTS hackathoninfo(id INT AUTO_INCREMENT PRIMARY KEY,sname VARCHAR(255) NOT NULL,
