@@ -63,8 +63,7 @@
 <?php
 
   include './connect.php';
-  $login = false;
-  $showError = false;
+
 
   if(isset($_POST['submit']))
   {
