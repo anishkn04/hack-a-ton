@@ -43,7 +43,7 @@
                     class="w-full px-4 py-2 border">
 
                     <div>
-                        <button type="submit" id="submit" class="border rounded text-center  py-2 border-2 border-[#424B54] bg-[#424B54] text-white p-1 w-full hover:bg-transparent hover:text-[#424B54] cursor-pointer hover:font-bold" name="submit" >Sign Up</button>
+                        <button type="submit" id="submit" class=" rounded text-center  py-2 border-2 border-[#424B54] bg-[#424B54] text-white p-1 w-full hover:bg-transparent hover:text-[#424B54] cursor-pointer hover:font-bold" name="submit" >Sign Up</button>
                     </div>
                 </form>
             </div>
