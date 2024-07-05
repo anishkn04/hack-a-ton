@@ -23,17 +23,17 @@
                 </div>
 
                 <!-- sign up form  -->
-                <form action="<?php $_SERVER['PHP_SELF']?>" method="post"
+                <form id="signupForm" action="<?php $_SERVER['PHP_SELF']?>" method="post"
                     class="mt-8 w-[80%] lg:w-96 mx-auto space-y-4">
                     <h4>Sign Up to manage your account</h4>
                     
-                    <input id="mname" name="mname" type="text" placeholder="Name"
+                    <input id="memname" name="mname" type="text" placeholder="Name"
                     class="w-full px-4 py-2 border">
 
-                    <input id="memail" name="memail" type="email" placeholder="Email"
+                    <input id="mememail" name="memail" type="email" placeholder="Email"
                     class="w-full px-4 py-2 border">
 
-                    <input id="mpassword" name="mpassword" type="password" placeholder="Password"
+                    <input id="mempassword" name="mpassword" type="password" placeholder="Password"
                     class="w-full px-4 py-2 border">
 
                     <input id="mcpassword" name="mcpassword" type="password" placeholder="Confirm Password"
@@ -49,6 +49,7 @@
             </div>
         </div>
     </div>
+    <script src="../js/accounts.js"></script>
 </body>
 </html>
 

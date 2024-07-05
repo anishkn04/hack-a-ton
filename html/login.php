@@ -30,10 +30,10 @@
                     class="mt-8 w-[80%] lg:w-96 mx-auto space-y-4">
                     <h4>Login to get access to your account.</h4>
                     
-                    <input id="" name="mumName" type="email" placeholder="Email"
+                    <input id="mumName" name="mumName" type="email" placeholder="Email"
                     class="w-full px-4 py-2 border">
 
-                    <input id="" name="numPassword" type="password" placeholder="Password"
+                    <input id="numPassword" name="numPassword" type="password" placeholder="Password"
                     class="w-full px-4 py-2 border">
 
 
@@ -42,7 +42,8 @@
                     </div> -->
 
                     <div>
-                        <button type="submit" id="submit" class="border rounded text-center  py-2 border-2 border-[#424B54] bg-[#424B54] text-white p-1 w-full hover:bg-transparent hover:text-[#424B54] cursor-pointer hover:font-bold" name="submit" >Login</button>
+                        <button type="submit" id="submit" class="border rounded text-center  py-2 border-2 border-[#424B54] bg-[#424B54] text-white p-1 w-full hover:bg-transparent hover:text-[#424B54] cursor-pointer hover:font-bold" name="submit"    
+                        onclick="checkUser()" >Login</button>
                     </div>
 
                     
