@@ -23,4 +23,3 @@
         echo "<script> alert($e) </script>";
     }
 
-?>
