@@ -11,6 +11,7 @@
             "teamName": "Terai-Toads",
             "projectRepo": "",
             "projectImage": "",
+            "image": "../images/nishan.jpg",
             "projectDesc": ""
         },
         {
@@ -24,6 +25,7 @@
             "teamName": "Mote-Mongooses",
             "projectRepo": "",
             "projectImage": "",
+            "image": "../images/rushab.png",
             "projectDesc": ""
         },
         {
@@ -37,6 +39,7 @@
             "teamName": "Lamba-Langurs",
             "projectRepo": "",
             "projectImage": "",
+            "image": "../images/rishav.jpg",
             "projectDesc": ""
         },
         {
@@ -50,6 +53,7 @@
             "teamName": "Terai-Toads",
             "projectRepo": "",
             "projectImage": "",
+            "image": "../images/prawin.jpg",
             "projectDesc": ""
         },
         {
@@ -63,6 +67,7 @@
             "teamName": "Lamba-Langurs",
             "projectRepo": "",
             "projectImage": "",
+            "image": "../images/manish.jpg",
             "projectDesc": ""
         },
         {
@@ -76,6 +81,7 @@
             "teamName": "Mote-Mongooses",
             "projectRepo": "",
             "projectImage": "",
+            "image": "../images/prayojan.jpg",
             "projectDesc": ""
         },
         {
@@ -89,6 +95,7 @@
             "teamName": "Diwaane-Dingoes",
             "projectRepo": "",
             "projectImage": "",
+            "image": "../images/abhishek.jpg",
             "projectDesc": ""
         },
         {
@@ -102,6 +109,7 @@
             "teamName": "Diwaane-Dingoes",
             "projectRepo": "",
             "projectImage": "",
+            "image": "../images/aashish.jpg",
             "projectDesc": ""
         }
     ],

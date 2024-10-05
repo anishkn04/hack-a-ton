@@ -1,1 +1,73 @@
-<!-- Abhishek Bhattarai -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/contact.css">
+    <title>Hack-a-ton</title>
+    
+</head>
+
+<body>
+    <h1>HACK-A-TON TEAMS</h1>
+    <div id="teams-container"></div>
+
+    <script>
+        fetch('../resources/contacts.json')
+    .then(response => response.json())
+    .then(data => {
+        const teamsContainer = document.getElementById('teams-container');
+
+        data.teams.forEach(team => {
+            const teamDiv = document.createElement('div');
+            teamDiv.classList.add('team');
+
+            const teamName = document.createElement('h2');
+            teamName.textContent = team.name;
+            teamDiv.appendChild(teamName);
+
+            const teamImage = document.createElement('img');
+            teamImage.src = `../images/${team.name.toLowerCase().replace(/ /g, '-')}.jpg`;
+            teamImage.alt = `${team.name} Image`;
+            teamDiv.appendChild(teamImage);
+
+            const teamDetails = document.createElement('div');
+            teamDetails.classList.add('team-details');
+
+            team.members.forEach(memberName => {
+                const member = data.members.find(m => m.name === memberName);
+                if (member) {
+                    const memberDiv = document.createElement('div');
+                    memberDiv.classList.add('member');
+
+                    const memberInfo = `
+                        <img src="${member.image}" alt="${member.name}" width="50" height="50" style="border-radius: 50%;">
+                        <strong>Name:</strong> ${member.name} <br>
+                        <strong>Email:</strong> <a href="mailto:${member.email}">${member.email}</a> <br>
+                        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/${member.linkedin}" target="_blank">${member.linkedin}</a> <br>
+                        <strong>GitHub:</strong> <a href="https://github.com/${member.github}" target="_blank">${member.github}</a> <br>
+                        <strong>Wakatime:</strong> <a href="https://wakatime.com/${member.wakatime}" target="_blank">${member.wakatime}</a> <br>
+                        ${member.portfolio ? `<strong>Portfolio:</strong> <a href="${member.portfolio}" target="_blank">${member.portfolio}</a> <br>` : ''}
+                    `;
+                    memberDiv.innerHTML = memberInfo;
+                    teamDetails.appendChild(memberDiv);
+                }
+            });
+
+            teamDiv.appendChild(teamDetails);
+
+            teamDiv.addEventListener('click', () => {
+               
+                teamDetails.style.display = teamDetails.style.display === 'none' ? 'block' : 'none';
+            });
+
+            teamsContainer.appendChild(teamDiv);
+        });
+    })
+    .catch(error => console.error('Error fetching the JSON data:', error));
+
+    </script>
+</body>
+
+</html>
