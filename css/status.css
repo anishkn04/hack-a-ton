@@ -1,1 +1,47 @@
-/* Aashish BK */
+.profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.chart-container {
+    width: 80%;
+    max-width: 800px;
+    background-color: #FFFFFF;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    margin-top: 20px;
+}
+.chart {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+.bar {
+    width: calc(100% / 7 - 20px);
+    background-color: #FCD581;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    margin-top: auto;
+    padding: 10px 0px;
+}
+.bar .info {
+    font-size: 0.8em;
+    margin-top: 5px;
+}
+.day-names {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-weight: bold;
+    padding: 0 0px;
+}
+.day-names div {
+    text-align: center;
+    flex-grow: 1;
+}
